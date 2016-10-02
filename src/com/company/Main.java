@@ -13,6 +13,7 @@ public class Main {
         Printer printer = new Printer();
 
         int answer;
+        
         do {
             int maxRandomNumber = 20;
 
