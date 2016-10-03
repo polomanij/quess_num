@@ -12,22 +12,29 @@ public class Main {
         NumberActions numberActions = new NumberActions();
         Printer printer = new Printer();
 
-        int answer;
-        
+        int answer, tryAmount = 3;
+
         do {
-            int maxRandomNumber = 20;
 
-            int random = numberActions.makeNumber(maxRandomNumber);
+            for (int i = 0; i < tryAmount; i++) {
 
-            printer.print("Please enter number from 1 to 20.");
+                int maxRandomNumber = 20;
 
-            int customerNumber = numberActions.getNumber();
+                int random = numberActions.makeNumber(maxRandomNumber);
 
-            if ( numberActions.toCompare(random, customerNumber) == 0 ) {
-                printer.print("You`re right!!");
-            } else {
-                printer.print("It`s wrong.");
+                printer.print("Please enter number from 1 to 20. You have try: " + tryAmount);
+
+                int customerNumber = numberActions.getNumber();
+
+                if ( numberActions.toCompare(random, customerNumber) == 0 ) {
+                    printer.print("You`re right!!");
+                } else {
+                    printer.print("It`s wrong.");
+                }
+
             }
+
+
 
             Scanner scanner = new Scanner(System.in);
 
